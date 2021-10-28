@@ -8,7 +8,7 @@
 :root {
     --color-primary: hsl(0, 90%, 62%);
     --color-primary-dark: hsl(360, 90%, 45%);
-    --color-primary-light: rgba(245, 71, 71, 0.3);
+    --color-primary-light: #fdecec;
 
     --color-secondary: hsl(39, 98%, 68%);
     --color-secondary-dark: hsl(39, 98%, 40%);
@@ -30,4 +30,9 @@ html {
 body {
     max-width: 1440px;
     margin: 0px auto;
+}
+
+/* Utility classes */
+.text-color-primary {
+    color: var(--color-primary);
 }
