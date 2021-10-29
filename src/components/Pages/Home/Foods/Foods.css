@@ -1,0 +1,8 @@
+.foods-section {
+    padding: 50px 0px;
+}
+
+.foods-section > div:last-child {
+    text-align: center;
+    margin-top: 25px;
+}

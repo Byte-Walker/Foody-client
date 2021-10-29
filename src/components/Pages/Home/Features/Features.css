@@ -6,6 +6,7 @@
     font-size: 40px;
     font-weight: 800;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .section-description {
@@ -15,11 +16,12 @@
     text-align: center;
     line-height: 30px;
     font-size: 20px;
+    color: var(--text-gray);
 }
 
-.features-container {
+.card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
-    padding-top: 30px;
+    padding: 30px;
 }

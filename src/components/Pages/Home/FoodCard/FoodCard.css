@@ -1,0 +1,33 @@
+.food-card {
+    padding-bottom: 30px;
+    border-radius: 15px;
+    background-color: var(--color-primary-light);
+}
+
+.food-img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
+}
+
+.food-details {
+    /* margin: 0 5px; */
+
+    padding: 20px 25px;
+    margin-top: 0;
+}
+
+.food-name {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.food-description {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.food-price {
+    font-size: 30px;
+    font-weight: 700;
+}

@@ -13,9 +13,9 @@ const Features = () => {
                 We work really hard to meet your satisfaction. Here is why we
                 stand out from the cloud.
             </p>
-            <div className="features-container">
+            <div className="card-container">
                 {features?.map((feature) => (
-                    <FeatureCard feature={feature} />
+                    <FeatureCard feature={feature} key={feature._id} />
                 ))}
             </div>
         </div>
