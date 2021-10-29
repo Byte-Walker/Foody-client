@@ -1,5 +1,5 @@
 .header {
-    background-color: white;
+    /* background-color: white; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,12 +67,15 @@ i:last-child {
 
     text-decoration: none;
     color: white;
+    font-size: 16px;
     font-weight: 600;
 
     background-color: var(--color-primary);
     padding: 12px 30px;
+    border: none;
     border-radius: 30px;
-    box-shadow: 0 0 50px rgba(245, 71, 71, 0.4);
+    box-shadow: 0 0 30px rgba(245, 71, 71, 0.4);
+    cursor: pointer;
     transition: all 0.2s;
 }
 
