@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import useGetFoodyUser from '../../hooks/useGetFoodyUser'
 import hamburgerIcon from '../../media/hamburger-icon.svg';
 import UserAvatar from '../UserAvatar/UserAvatar';
 import './Header.css';
@@ -8,6 +9,9 @@ import './Header.css';
 const Header = () => {
     const user = useAuth();
     console.log(user);
+
+    const foodyUser = useGetFoodyUser(useAuth());
+    console.log(foodyUser);
 
     return (
         <header className="header">

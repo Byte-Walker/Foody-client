@@ -24,7 +24,10 @@ const UserAvatar = ({ user }) => {
                 alt={displayName}
                 className="user-avatar-img"
             />
-            <div onClick={handleNavVisibilityChange} className={"user-avatar-nav-parent " + displayProperty }>
+            <div
+                onClick={handleNavVisibilityChange}
+                className={'user-avatar-nav-parent ' + displayProperty}
+            >
                 <div className={'user-avatar-nav ' + displayProperty}>
                     <img
                         src={photoURL}
@@ -38,7 +41,8 @@ const UserAvatar = ({ user }) => {
                         <Link to="/orders">Add a New Food</Link>
                     </div>
                     <button onClick={signOutUser} className="btn-primary">
-                        SignOut
+                        <span>SignOut </span>
+                        <i class="fi fi-rr-sign-out"></i>
                     </button>
                 </div>
             </div>

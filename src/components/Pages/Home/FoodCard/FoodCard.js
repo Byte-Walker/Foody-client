@@ -27,7 +27,7 @@ const FoodCard = ({ food }) => {
 
                 <div className="flex-between">
                     <p className="food-price">${price}</p>
-                    <Link to="/checkout" className="btn-primary">
+                    <Link to="/placeorder" className="btn-primary">
                         Order now
                     </Link>
                 </div>
