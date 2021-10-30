@@ -12,6 +12,10 @@
 
     --color-secondary: hsl(39, 98%, 68%);
     --color-secondary-dark: hsl(39, 98%, 40%);
+    --color-secondary-light: rgba(253, 197, 93, 0.3);
+
+    --color-success: #5cb85c;
+    --color-danger: #f04124;
 
     --text-gray: rgb(63, 63, 63);
 }

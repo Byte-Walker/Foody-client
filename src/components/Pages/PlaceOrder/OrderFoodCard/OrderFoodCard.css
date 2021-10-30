@@ -1,0 +1,23 @@
+.order-food-card {
+    background-color: var(--color-primary-light);
+    border-radius: 15px;
+    margin: 0 auto;
+    border: 1px solid rgba(245, 71, 71, 0.2);
+}
+
+.order-food-card img {
+    width: 100px;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.order-food-card-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.order-food-card-price {
+    padding: 20px;
+    font-size: 30px;
+}

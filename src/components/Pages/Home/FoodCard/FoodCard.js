@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './FoodCard.css';
 
 const FoodCard = ({ food }) => {
-    const { name, description, img, rating, price } = food;
+    const { name, description, img, rating, price, _id } = food;
     return (
         <div className="food-card">
             {/* Food thumbnail */}
@@ -27,7 +27,7 @@ const FoodCard = ({ food }) => {
 
                 <div className="flex-between">
                     <p className="food-price">${price}</p>
-                    <Link to="/placeorder" className="btn-primary">
+                    <Link to={`/placeorder/${_id}`} className="btn-primary">
                         Order now
                     </Link>
                 </div>
