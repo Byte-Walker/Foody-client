@@ -1,0 +1,29 @@
+.not-found {
+    margin: 50px auto;
+}
+
+.not-found img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.not-found h1 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.not-found div {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.not-found div a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    padding: 10px 20px;
+    border-radius: 20px;
+}

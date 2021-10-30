@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFoods from '../../../../hooks/useFoods';
+import Preloader from '../../../Preloader/Preloader';
 import FoodCard from '../FoodCard/FoodCard';
 import './Foods.css';
 
@@ -14,11 +15,18 @@ const Foods = () => {
                 These delicious foods are only 20 minutes away from you. So what
                 are you waiting for?
             </p>
-            <div className="card-container">
-                {foods?.map((food) => (
-                    <FoodCard food={food} key={food._id} />
-                ))}
-            </div>
+            {foods ? (
+                <div className="card-container">
+                    {foods?.map((food, index) =>
+                        index < 9 ? (
+                            <FoodCard food={food} key={food._id} />
+                        ) : null
+                    )}
+                </div>
+            ) : (
+                <Preloader />
+            )}
+
             <div>
                 <Link to="/foods" className="btn-primary">
                     <span>See more</span>

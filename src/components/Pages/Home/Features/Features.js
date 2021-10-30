@@ -1,5 +1,6 @@
 import React from 'react';
 import useFeatures from '../../../../hooks/useFeatures';
+import Preloader from '../../../Preloader/Preloader';
 import FeatureCard from '../FeatureCard/FeatureCard';
 import './Features.css';
 
@@ -13,11 +14,15 @@ const Features = () => {
                 We work really hard to meet your satisfaction. Here is why we
                 stand out from the cloud.
             </p>
-            <div className="card-container">
-                {features?.map((feature) => (
-                    <FeatureCard feature={feature} key={feature._id} />
-                ))}
-            </div>
+            {features ? (
+                <div className="card-container">
+                    {features?.map((feature) => (
+                        <FeatureCard feature={feature} key={feature._id} />
+                    ))}
+                </div>
+            ) : (
+                <Preloader />
+            )}
         </div>
     );
 };

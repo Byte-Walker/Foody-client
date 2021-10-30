@@ -8,6 +8,10 @@ import useFirebase from './hooks/useFirebase';
 import PlaceOrder from './components/Pages/PlaceOrder/PlaceOrder';
 import PrivateRoute from './components/PrivateRoute';
 import MyOrders from './components/Pages/MyOrders/MyOrders';
+import AllOrders from './components/Pages/AllOrders/AllOrders';
+import AddNewFood from './components/Pages/AddNewFood/AddNewFood';
+import FoodsPage from './components/Pages/FoodsPage/FoodsPage';
+import NotFound from './components/Pages/NotFound/NotFound';
 
 export const AuthContext = createContext();
 
@@ -34,9 +38,29 @@ function App() {
                         <MyOrders />
                     </PrivateRoute>
 
+                    {/* All orders route */}
+                    <PrivateRoute exact path="/allorders">
+                        <AllOrders />
+                    </PrivateRoute>
+
+                    {/* Add new food route */}
+                    <PrivateRoute exact path="/newfood">
+                        <AddNewFood />
+                    </PrivateRoute>
+
+                    {/* Add new food route */}
+                    <Route exact path="/foods">
+                        <FoodsPage />
+                    </Route>
+
                     {/* Home route */}
                     <Route exact path={['/', '/home']}>
                         <Home />
+                    </Route>
+
+                    {/* Not Found route */}
+                    <Route path="*">
+                        <NotFound />
                     </Route>
                 </Switch>
             </Router>

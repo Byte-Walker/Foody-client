@@ -25,10 +25,14 @@ const OrderedProductCardUser = ({ order, updateOrders }) => {
             <h2 className="ordered-product-name">{name}</h2>
             <h2 className="ordered-product-price">${price}</h2>
             <p className={('ordered-product-status ', status)}>
-                {status.toUpperCase()}
+                {status?.toUpperCase()}
             </p>
             <button
-                onClick={handleDeleteOrder}
+                onClick={() =>
+                    window.confirm('Are you sure you want to delete this?')
+                        ? handleDeleteOrder()
+                        : null
+                }
                 className="ordered-product-cancel-btn"
             >
                 {' '}

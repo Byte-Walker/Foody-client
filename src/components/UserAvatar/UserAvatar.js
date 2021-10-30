@@ -36,9 +36,9 @@ const UserAvatar = ({ user }) => {
                     />
                     <h2 className="user-avatar-name">{displayName}</h2>
                     <div className="user-avatar-nav-list">
-                        <Link to="/orders">My Orders</Link>
+                        <Link to="/myorders">My Orders</Link>
                         <Link to="/allorders">Manage All Orders</Link>
-                        <Link to="/orders">Add a New Food</Link>
+                        <Link to="/newfood">Add a New Food</Link>
                     </div>
                     <button onClick={signOutUser} className="btn-primary">
                         <span>SignOut </span>

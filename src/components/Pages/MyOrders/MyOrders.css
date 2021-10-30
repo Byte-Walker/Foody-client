@@ -2,3 +2,11 @@
     margin-top: 50px;
     color: var(--color-danger);
 }
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+}

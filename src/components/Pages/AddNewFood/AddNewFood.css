@@ -1,0 +1,19 @@
+.add-new-food form{
+    margin-top: 60px;
+}
+
+form .btn-primary {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.submit-message {
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-success);
+}
+
+.input-group-submit {
+    margin: 20px auto;
+    max-width: 500px;
+}

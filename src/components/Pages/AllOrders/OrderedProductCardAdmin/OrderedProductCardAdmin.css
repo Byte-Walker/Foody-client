@@ -1,0 +1,18 @@
+.ordered-product-complete-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #2add2a;
+    background-color: rgba(92, 184, 92, 0.1);
+    color: var(--color-success);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.ordered-product-complete-btn:hover {
+    background-color: var(--color-success);
+    color: white;
+}

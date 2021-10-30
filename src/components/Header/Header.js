@@ -23,7 +23,7 @@ const Header = () => {
             <nav className="header-navlist">
                 <Link to="/home">Home</Link>
                 <Link to="/foods">Browse Foods</Link>
-                <Link to="/contact">Contact</Link>
+                <Link to="/myorders">My Orders</Link>
             </nav>
 
             <div className="header-right">
