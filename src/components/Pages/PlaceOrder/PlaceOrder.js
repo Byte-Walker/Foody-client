@@ -14,15 +14,19 @@ const PlaceOrder = () => {
     const [address, setAddress] = useState('');
     const foodyUser = useGetFoodyUser(useAuth());
 
+    // Checking if foody user is loaded for avoiding error
     if (foodyUser) {
         var { _id, displayName, email } = foodyUser;
     }
 
+    // Checking if product is loaded for avoiding error
     if (product) {
         var { img, name, description, price, rating } = product;
     }
 
+    // Collect the product info from the server
     useEffect(() => {
+        // Send get request to the server
         fetch(`https://foddy-server.herokuapp.com/foodinfo/${productId}`)
             .then((response) => response.json())
             .then((data) => {
@@ -31,7 +35,9 @@ const PlaceOrder = () => {
             });
     }, []);
 
+    // Add order to the server
     const handlePlaceOrder = () => {
+        // Building the order object with the given data
         const orderDetails = {
             dbUser_id: _id,
             productId,
@@ -44,6 +50,8 @@ const PlaceOrder = () => {
             price: totalPrice,
             img,
         };
+
+        // Sending post request to the server including the product object to the body
         fetch('https://foddy-server.herokuapp.com/placeorder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -51,6 +59,7 @@ const PlaceOrder = () => {
         })
             .then((response) => response.json())
             .then((data) => {
+                // Redirecting user to the orders page after successfull order
                 if (data.insertedId) {
                     history.push('/myorders');
                 }
@@ -59,13 +68,18 @@ const PlaceOrder = () => {
 
     return (
         <div>
+            {/* Page banner */}
             <div className="page-banner">
                 <h1 className="section-title">Order Here</h1>
             </div>
 
             <div className="place-order-section">
+                {/* Displaying product details */}
                 <div className="place-order-product-details">
+                    {/* Heading */}
                     <h2 className="subsection-title">Product Details</h2>
+
+                    {/* Product info */}
                     <div>
                         <div className="place-order-product-info">
                             <h3 className="place-order-product-property">
@@ -75,6 +89,7 @@ const PlaceOrder = () => {
                                 {name}
                             </span>
                         </div>
+
                         <div className="place-order-product-info">
                             <h3 className="place-order-product-property">
                                 Description:{' '}
@@ -83,6 +98,7 @@ const PlaceOrder = () => {
                                 {description}
                             </span>
                         </div>
+
                         <div className="place-order-product-info">
                             <h3 className="place-order-product-property">
                                 Rating:{' '}
@@ -91,6 +107,7 @@ const PlaceOrder = () => {
                                 {rating}/5
                             </span>
                         </div>
+
                         <div className="place-order-product-info">
                             <h3 className="place-order-product-property">
                                 Price:{' '}
@@ -99,12 +116,16 @@ const PlaceOrder = () => {
                                 ${price}
                             </span>
                         </div>
-
                     </div>
                 </div>
+
+                {/* Getting details from the user */}
                 <div className="billing-details">
                     <h2 className="subsection-title">Billing details</h2>
+
+                    {/* Details form */}
                     <form>
+                        {/* Input group consisting of label and input field */}
                         <p className="input-group">
                             <label htmlFor="name">Full name</label>
                             <input
@@ -115,6 +136,8 @@ const PlaceOrder = () => {
                                 disabled
                             />
                         </p>
+
+                        {/* Email */}
                         <p className="input-group">
                             <label htmlFor="email">Email</label>
                             <input
@@ -125,6 +148,8 @@ const PlaceOrder = () => {
                                 disabled
                             />
                         </p>
+
+                        {/* Country */}
                         <p className="input-group">
                             <label htmlFor="country">Country</label>
                             <input
@@ -137,6 +162,8 @@ const PlaceOrder = () => {
                                 }}
                             />
                         </p>
+
+                        {/* Full Address */}
                         <p className="input-group">
                             <label htmlFor="full-address">Full Address</label>
                             <textarea
@@ -152,8 +179,12 @@ const PlaceOrder = () => {
                         </p>
                     </form>
                 </div>
+
+                {/* Cart section */}
                 <div>
                     <h2 className="subsection-title">Cart</h2>
+
+                    {/* Order details */}
                     <div className="cart">
                         <OrderFoodCard product={product} />
                         <div className="horizontal-separator"></div>
@@ -162,6 +193,8 @@ const PlaceOrder = () => {
                             <h1 className="text-red">${totalPrice}</h1>
                         </div>
                     </div>
+
+                    {/* Submit button */}
                     <button
                         onClick={handlePlaceOrder}
                         className="place-order-btn"

@@ -9,10 +9,12 @@ const AddNewFood = () => {
     const [price, setPrice] = useState();
     const [submitMessage, setSubmitMessage] = useState('');
 
+    // Handling form submit and send the new food info to the server
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const foodInfo = { name, description, img, rating, price };
-        console.log(foodInfo);
+
+        // Post request to the server
         fetch('https://foddy-server.herokuapp.com/addfood', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -20,6 +22,7 @@ const AddNewFood = () => {
         })
             .then((response) => response.json())
             .then((data) => {
+                // Set the successfull message
                 if (data.insertedId) {
                     setSubmitMessage('Food added successfully.');
                     document.getElementById('add-food-form').reset();
@@ -29,13 +32,14 @@ const AddNewFood = () => {
 
     return (
         <div className="add-new-food">
+            {/* Page banner */}
             <div className="page-banner">
                 <h1 className="section-title">Add New Food</h1>
             </div>
-            <form
-                id="add-food-form"
-                onSubmit={handleFormSubmit}
-            >
+
+            {/* Food info collecting form */}
+            <form id="add-food-form" onSubmit={handleFormSubmit}>
+                {/* Input group consisting label and input field */}
                 <p className="input-group">
                     <label htmlFor="name">Food Name</label>
                     <input
@@ -47,6 +51,7 @@ const AddNewFood = () => {
                         required
                     />
                 </p>
+
                 <p className="input-group">
                     <label htmlFor="food-details">Food Description</label>
                     <textarea
@@ -59,6 +64,7 @@ const AddNewFood = () => {
                         required
                     ></textarea>
                 </p>
+
                 <p className="input-group">
                     <label htmlFor="rating">Rating</label>
                     <input
@@ -72,6 +78,7 @@ const AddNewFood = () => {
                         required
                     />
                 </p>
+
                 <p className="input-group">
                     <label htmlFor="price">Price</label>
                     <input
@@ -96,7 +103,11 @@ const AddNewFood = () => {
                         required
                     />
                 </p>
+
+                {/* Success message */}
                 <p className="submit-message">{submitMessage}</p>
+
+                {/* Submit button */}
                 <p className="input-group-submit">
                     <button type="submit" className="place-order-btn">
                         Submit

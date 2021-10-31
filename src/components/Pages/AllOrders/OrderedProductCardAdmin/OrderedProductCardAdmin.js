@@ -4,7 +4,9 @@ import './OrderedProductCardAdmin.css';
 const OrderedProductCardAdmin = ({ order, updateOrders, setRender }) => {
     const { productId, status, price, img, name } = order;
 
+    // Delete the product from the server
     const handleDeleteOrder = () => {
+        // Delete request having product id in the url
         fetch(`https://foddy-server.herokuapp.com/deleteorder/${productId}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
@@ -19,17 +21,22 @@ const OrderedProductCardAdmin = ({ order, updateOrders, setRender }) => {
             });
     };
 
+    // Update order status to the server
     const handleOrderStatusChange = () => {
-        fetch(`https://foddy-server.herokuapp.com/updateorderstatus/${productId}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                status: 'completed',
-            }),
-        })
+        // Send update / PUT request to the server
+        fetch(
+            `https://foddy-server.herokuapp.com/updateorderstatus/${productId}`,
+            {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    status: 'completed',
+                }),
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
+                // Show success message
                 if (data.modifiedCount > 0) {
                     console.log('Order status updated successfully');
                     const date = new Date().toTimeString();
@@ -37,15 +44,20 @@ const OrderedProductCardAdmin = ({ order, updateOrders, setRender }) => {
                 }
             });
     };
+
     return (
         <div className="order-product-card">
+            {/* Product information */}
             <img src={img} alt="" className="ordered-product-img" />
             <h2 className="ordered-product-name">{name}</h2>
             <h2 className="ordered-product-price">${price}</h2>
             <p className={('ordered-product-status ', status)}>
                 {status.toUpperCase()}
             </p>
+
+            {/* action buttons */}
             <div className="ordered-product-btn-group">
+                {/* Order delete button */}
                 <button
                     onClick={() =>
                         window.confirm('Are you sure you want to delete this?')
@@ -58,13 +70,17 @@ const OrderedProductCardAdmin = ({ order, updateOrders, setRender }) => {
                     <span className="cancel-btn-text">Delete Order</span>
                     <i class="fi fi-rr-trash cancel-btn-icon"></i>
                 </button>
+
+                {/* Order status update button */}
                 {status === 'pending' ? (
                     <button
                         onClick={handleOrderStatusChange}
                         className="ordered-product-complete-btn"
                     >
                         {' '}
-                        <span className="cancel-btn-text">Mark as Completed</span>
+                        <span className="cancel-btn-text">
+                            Mark as Completed
+                        </span>
                         <i class="fi fi-rr-shopping-cart-check cancel-btn-icon"></i>
                     </button>
                 ) : null}

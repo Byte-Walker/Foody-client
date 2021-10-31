@@ -9,6 +9,7 @@ const AllOrders = () => {
     const [loading, setLoading] = useState(true);
     const [display, setDisplay] = useState('none');
 
+    // Update order list after deleting
     const updateOrders = (productId) => {
         const updatedOrder = orders.filter(
             (order) => order.productId !== productId
@@ -16,7 +17,9 @@ const AllOrders = () => {
         setOrders(updatedOrder);
     };
 
+    // Collect all the orders from the server
     useEffect(() => {
+        // Send get request to the server
         fetch(`https://foddy-server.herokuapp.com/getallorders`)
             .then((response) => response.json())
             .then((data) => {
@@ -28,10 +31,14 @@ const AllOrders = () => {
 
     return (
         <div>
+            {/* Page banner */}
             <div className="page-banner">
                 <h1 className="section-title">Manage All Orders</h1>
             </div>
+
+            {/* Displaying order list based on the data */}
             <div>
+                {/* Loading animation before loading the data from the server */}
                 <BounceLoader
                     color={'#f54747'}
                     loading={loading}
@@ -52,6 +59,7 @@ const AllOrders = () => {
                         />
                     ))
                 ) : (
+                    // Displaying empty order message
                     <div className={'my-order-empty ' + display}>
                         <h1 className="section-title">
                             {' '}

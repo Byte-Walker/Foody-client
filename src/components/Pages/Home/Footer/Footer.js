@@ -8,12 +8,10 @@ import twitter from '../../../../media/twitter.png';
 const Footer = () => {
     return (
         <div className="footer">
-            {/* <nav>
-                <Link to="/">HOME</Link>
-                <a href="/#why-us">WHY US</a>
-                <Link to="/foods">AVAILABLE FOODS</Link>
-            </nav> */}
+            {/* Footer logo */}
             <img src={logo} alt="Foody logo" />
+
+            {/* Social media links with icons */}
             <div className="footer-social-icons">
                 <a
                     href="https://www.facebook.com/profile.php?id=100008215602384"
@@ -36,8 +34,8 @@ const Footer = () => {
                 >
                     <img src={twitter} alt="twitter logo" />
                 </a>
-
             </div>
+
             <p>Copyright &copy; 2021 | All rights reserved</p>
         </div>
     );

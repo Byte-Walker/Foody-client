@@ -64,7 +64,7 @@ function App() {
                         <NotFound />
                     </Route>
                 </Switch>
-                <Footer/>
+                <Footer />
             </Router>
         </AuthContext.Provider>
     );

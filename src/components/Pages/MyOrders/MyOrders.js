@@ -11,6 +11,7 @@ const MyOrders = () => {
     const [loading, setLoading] = useState(true);
     const [display, setDisplay] = useState('none');
 
+    // Update orders after deleting
     const updateOrders = (productId) => {
         const updatedOrder = orders.filter(
             (order) => order.productId !== productId
@@ -18,7 +19,9 @@ const MyOrders = () => {
         setOrders(updatedOrder);
     };
 
+    // Get all the orders of the particular user
     useEffect(() => {
+        // Sending get request to the server
         fetch(`https://foddy-server.herokuapp.com/getuserorders/${id}`)
             .then((response) => response.json())
             .then((data) => {
@@ -30,9 +33,12 @@ const MyOrders = () => {
 
     return (
         <div>
+            {/* Page banner */}
             <div className="page-banner">
                 <h1 className="section-title">Your Orders</h1>
             </div>
+
+            {/* Showing loading animation while loading the data */}
             <BounceLoader
                 color={'#f54747'}
                 loading={loading}
@@ -43,6 +49,8 @@ const MyOrders = () => {
                 }}
                 speedMultiplier={2}
             />
+
+            {/* Displaying the orders to the UI */}
             <div>
                 {orders.length > 0 ? (
                     orders.map((order) => (

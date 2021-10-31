@@ -5,9 +5,14 @@ import howToImg from '../../../../media/HowTo.svg';
 const HowTo = () => {
     return (
         <div className="how-to-section" id="how-to-order">
+            {/* Left side image of the how-to section */}
             <img src={howToImg} alt="step by step guide" />
+
+            {/* Right side content of the how-to section */}
             <div className="how-to-guide">
                 <h1 className="section-title">How It Works</h1>
+
+                {/* STEP 1 */}
                 <div className="how-to-step">
                     <h2 className="how-to-step-heading">
                         {' '}
@@ -20,6 +25,8 @@ const HowTo = () => {
                         button.
                     </p>
                 </div>
+
+                {/* STEP 2 */}
                 <div className="how-to-step">
                     <h2 className="how-to-step-heading">
                         {' '}
@@ -31,6 +38,8 @@ const HowTo = () => {
                         make your payment in various platforms.
                     </p>
                 </div>
+
+                {/* STEP 3 */}
                 <div className="how-to-step">
                     <h2 className="how-to-step-heading">
                         {' '}

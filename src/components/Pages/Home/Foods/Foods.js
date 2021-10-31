@@ -9,12 +9,15 @@ const Foods = () => {
     const foods = useFoods();
 
     return (
+        // Foods section of the home page
         <div className="foods-section">
             <h1 className="section-title">Delicious Food For you</h1>
             <p className="section-description">
                 These delicious foods are only 20 minutes away from you. So what
                 are you waiting for?
             </p>
+
+            {/* Food card container */}
             {foods ? (
                 <div className="card-container">
                     {foods?.map((food, index) =>
@@ -24,9 +27,11 @@ const Foods = () => {
                     )}
                 </div>
             ) : (
+                // Displaying preloader while the data is loading
                 <Preloader />
             )}
 
+            {/* See more button */}
             <div>
                 <Link to="/foods" className="btn-primary">
                     <span>See more</span>

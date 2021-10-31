@@ -6,6 +6,7 @@ const OrderFoodCard = ({ product }) => {
 
     return (
         <div className="order-food-card flex-between">
+            {/* Food card information */}
             <div className="order-food-card-info">
                 <img src={img} alt={name} />
                 <h2>{name}</h2>
