@@ -21,3 +21,30 @@
     padding: 20px;
     font-size: 30px;
 }
+
+@media only screen and (max-width: 449px) {
+    .order-food-card img {
+        width: 70px;
+    }
+    .order-food-card-info h2 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .order-food-card-price {
+        font-size: 25px;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 309px) {
+    .order-food-card-info h2 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .order-food-card-price {
+        font-size: 20px;
+        padding: 10px;
+    }
+}

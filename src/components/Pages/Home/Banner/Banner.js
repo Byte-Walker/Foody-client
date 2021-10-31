@@ -25,12 +25,19 @@ const Banner = () => {
                         delicious food through the fastest delivery. So what are
                         you waiting for? Let us fill you.
                     </p>
-                    <Link to="/foods" className="btn-primary">
-                        <span>Get Started </span> 
-                        <i class="fi fi-rr-rocket"></i>
-                    </Link>
+                    <div className="banner-btn">
+                        <Link to="/foods" className="btn-primary">
+                            <span>Get Started </span>
+                            <i class="fi fi-rr-rocket"></i>
+                        </Link>
+                    </div>
                 </div>
-                <img src={foodyFeaturedImg} alt="Foody featured" />
+
+                <img
+                    src={foodyFeaturedImg}
+                    alt="Foody featured"
+                    className="banner-img"
+                />
             </div>
         </div>
     );

@@ -36,8 +36,8 @@ const OrderedProductCardUser = ({ order, updateOrders }) => {
                 className="ordered-product-cancel-btn"
             >
                 {' '}
-                <span>Cancel Order</span>
-                <i class="fi fi-rr-trash"></i>
+                <span className="cancel-btn-text">Cancel Order</span>
+                <i class="fi fi-rr-trash cancel-btn-icon" title="Cancel Order"></i>
             </button>
         </div>
     );

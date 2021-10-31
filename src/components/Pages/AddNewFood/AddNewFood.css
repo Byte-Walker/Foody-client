@@ -1,5 +1,6 @@
 .add-new-food form{
     margin-top: 60px;
+    padding: 0 15px;
 }
 
 form .btn-primary {

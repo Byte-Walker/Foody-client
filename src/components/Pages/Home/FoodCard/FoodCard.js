@@ -25,7 +25,7 @@ const FoodCard = ({ food }) => {
                 <h3 className="food-name">{name}</h3>
                 <p className="food-description">{description.slice(0, 70) + ' ...'}</p>
 
-                <div className="flex-between">
+                <div className="food-card-price-order">
                     <p className="food-price">${price}</p>
                     <Link to={`/placeorder/${_id}`} className="btn-primary">
                         Order now

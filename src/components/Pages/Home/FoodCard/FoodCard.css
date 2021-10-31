@@ -31,3 +31,32 @@
     font-size: 30px;
     font-weight: 700;
 }
+
+.food-card-price-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 369px) {
+    .food-price {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .food-card-price-order {
+        flex-direction: column;
+    }
+
+    .food-card {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .food-description {
+        margin-bottom: 10px;
+    }
+
+}
+
+

@@ -55,8 +55,8 @@ const OrderedProductCardAdmin = ({ order, updateOrders, setRender }) => {
                     className="ordered-product-cancel-btn"
                 >
                     {' '}
-                    <span>Delete Order</span>
-                    <i class="fi fi-rr-trash"></i>
+                    <span className="cancel-btn-text">Delete Order</span>
+                    <i class="fi fi-rr-trash cancel-btn-icon"></i>
                 </button>
                 {status === 'pending' ? (
                     <button
@@ -64,8 +64,8 @@ const OrderedProductCardAdmin = ({ order, updateOrders, setRender }) => {
                         className="ordered-product-complete-btn"
                     >
                         {' '}
-                        <span>Mark as Completed</span>
-                        <i class="fi fi-rr-shopping-cart-check"></i>
+                        <span className="cancel-btn-text">Mark as Completed</span>
+                        <i class="fi fi-rr-shopping-cart-check cancel-btn-icon"></i>
                     </button>
                 ) : null}
             </div>

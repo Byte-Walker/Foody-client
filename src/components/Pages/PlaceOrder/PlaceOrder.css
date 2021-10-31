@@ -32,10 +32,6 @@
     margin-right: 10px;
 }
 
-.place-order-product-value {
-
-}
-
 .subsection-title {
     background-color: var(--color-primary-light);
     padding: 10px 2px;
@@ -141,4 +137,30 @@ input:disabled {
 
 .place-order-btn:hover {
     background-color: var(--color-primary-dark);
+}
+
+@media only screen and (max-width: 799px) {
+    .place-order-section {
+        grid-template-columns: 1fr;
+    }
+    .page-banner {
+        padding: 40px 0;
+    }
+}
+
+@media only screen and (max-width: 449px) {
+    .cart {
+        padding: 20px;
+        border-radius: 0;
+    }
+
+    .page-banner {
+        padding: 30px 0;
+    }
+}
+
+@media only screen and (max-width: 329px) {
+    .cart {
+        padding: 20px 10px;
+    }
 }

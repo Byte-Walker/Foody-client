@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import useGetFoodyUser from '../../hooks/useGetFoodyUser'
+import useGetFoodyUser from '../../hooks/useGetFoodyUser';
 import hamburgerIcon from '../../media/hamburger-icon.svg';
 import UserAvatar from '../UserAvatar/UserAvatar';
 import './Header.css';
+import logo from '../../media/foody-logo.png';
 
 const Header = () => {
     const user = useAuth();
@@ -16,8 +17,9 @@ const Header = () => {
     return (
         <header className="header">
             <Link to="/" className="header-logo">
-                <img src={hamburgerIcon} alt="Foody hamburger icon" />
-                <h1>Foody</h1>
+                {/* <img src={hamburgerIcon} alt="Foody hamburger icon" />
+                <h1>Foody</h1> */}
+                <img src={logo} alt="Foody Logo" />
             </Link>
 
             <nav className="header-navlist">

@@ -8,7 +8,7 @@
     border-bottom: 1px solid rgba(245, 71, 71, 0.2);
 }
 
-.header-logo img {
+/* .header-logo img {
     height: 40px;
     margin-right: 5px;
 }
@@ -19,7 +19,6 @@
     font-weight: 800;
     text-decoration: none;
 
-    /* Gradient background to the text */
     background-image: linear-gradient(
         to right,
         var(--color-primary),
@@ -33,6 +32,11 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+} */
+
+.header-logo img {
+    display: block;
+    height: 45px;
 }
 
 .header-navlist a {
@@ -81,4 +85,16 @@ i:last-child {
 
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
+}
+
+@media only screen and (max-width: 719px) {
+    .header-navlist {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 359px) {
+    .header-logo img{
+        height: 35px;
+    }
 }
