@@ -17,7 +17,7 @@ const AllOrders = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/getallorders`)
+        fetch(`https://foddy-server.herokuapp.com/getallorders`)
             .then((response) => response.json())
             .then((data) => {
                 setOrders(data);

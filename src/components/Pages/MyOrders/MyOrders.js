@@ -19,7 +19,7 @@ const MyOrders = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/getuserorders/${id}`)
+        fetch(`https://foddy-server.herokuapp.com/getuserorders/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setOrders(data);

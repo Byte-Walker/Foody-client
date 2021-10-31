@@ -13,7 +13,7 @@ const AddNewFood = () => {
         e.preventDefault();
         const foodInfo = { name, description, img, rating, price };
         console.log(foodInfo);
-        fetch('http://localhost:5000/addfood', {
+        fetch('https://foddy-server.herokuapp.com/addfood', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(foodInfo),

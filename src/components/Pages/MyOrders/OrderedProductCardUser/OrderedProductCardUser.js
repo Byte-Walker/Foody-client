@@ -5,7 +5,7 @@ const OrderedProductCardUser = ({ order, updateOrders }) => {
     const { productId, status, price, img, name } = order;
 
     const handleDeleteOrder = () => {
-        fetch(`http://localhost:5000/deleteorder/${productId}`, {
+        fetch(`https://foddy-server.herokuapp.com/deleteorder/${productId}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
         })

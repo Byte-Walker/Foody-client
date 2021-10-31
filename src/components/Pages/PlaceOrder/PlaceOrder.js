@@ -23,7 +23,7 @@ const PlaceOrder = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/foodinfo/${productId}`)
+        fetch(`https://foddy-server.herokuapp.com/foodinfo/${productId}`)
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data);
@@ -44,7 +44,7 @@ const PlaceOrder = () => {
             price: totalPrice,
             img,
         };
-        fetch('http://localhost:5000/placeorder', {
+        fetch('https://foddy-server.herokuapp.com/placeorder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetails),
