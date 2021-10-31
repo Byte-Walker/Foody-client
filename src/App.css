@@ -31,6 +31,7 @@
 html {
     background-image: linear-gradient(to bottom, var(--color-primary-light), white);
     background-repeat: no-repeat;
+    scroll-behavior: smooth;
 }
 
 body {

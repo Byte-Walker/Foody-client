@@ -15,11 +15,11 @@ const PlaceOrder = () => {
     const foodyUser = useGetFoodyUser(useAuth());
 
     if (foodyUser) {
-        var {_id, displayName, email } = foodyUser;
+        var { _id, displayName, email } = foodyUser;
     }
 
-    if(product) {
-        var {img, name} = product;
+    if (product) {
+        var { img, name, description, price, rating } = product;
     }
 
     useEffect(() => {
@@ -32,7 +32,6 @@ const PlaceOrder = () => {
     }, []);
 
     const handlePlaceOrder = () => {
-
         const orderDetails = {
             dbUser_id: _id,
             productId,
@@ -47,15 +46,15 @@ const PlaceOrder = () => {
         };
         fetch('http://localhost:5000/placeorder', {
             method: 'POST',
-            headers: { 'Content-Type' : 'application/json' },
-            body: JSON.stringify(orderDetails)
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderDetails),
         })
-        .then((response) => response.json())
-        .then((data) => {
-            if(data.insertedId) {
-                history.push('/myorders');
-            }
-        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.insertedId) {
+                    history.push('/myorders');
+                }
+            });
     };
 
     return (
@@ -63,7 +62,46 @@ const PlaceOrder = () => {
             <div className="page-banner">
                 <h1 className="section-title">Order Here</h1>
             </div>
+
             <div className="place-order-section">
+                <div className="place-order-product-details">
+                    <h2 className="subsection-title">Product Details</h2>
+                    <div>
+                        <div className="place-order-product-info">
+                            <h3 className="place-order-product-property">
+                                Name:{' '}
+                            </h3>
+                            <span className="place-order-product-value">
+                                {name}
+                            </span>
+                        </div>
+                        <div className="place-order-product-info">
+                            <h3 className="place-order-product-property">
+                                Description:{' '}
+                            </h3>
+                            <span className="place-order-product-value">
+                                {description}
+                            </span>
+                        </div>
+                        <div className="place-order-product-info">
+                            <h3 className="place-order-product-property">
+                                Rating:{' '}
+                            </h3>
+                            <span className="place-order-product-value">
+                                {rating}/5
+                            </span>
+                        </div>
+                        <div className="place-order-product-info">
+                            <h3 className="place-order-product-property">
+                                Price:{' '}
+                            </h3>
+                            <span className="place-order-product-value">
+                                ${price}
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
                 <div className="billing-details">
                     <h2 className="subsection-title">Billing details</h2>
                     <form>

@@ -8,7 +8,7 @@ const Features = () => {
     const features = useFeatures();
     console.log(features);
     return (
-        <div className="features-section">
+        <div className="features-section" id="why-us">
             <h1 className="section-title">Why Choose Us</h1>
             <p className="section-description">
                 We work really hard to meet your satisfaction. Here is why we

@@ -12,6 +12,7 @@ import AllOrders from './components/Pages/AllOrders/AllOrders';
 import AddNewFood from './components/Pages/AddNewFood/AddNewFood';
 import FoodsPage from './components/Pages/FoodsPage/FoodsPage';
 import NotFound from './components/Pages/NotFound/NotFound';
+import Footer from './components/Pages/Home/Footer/Footer';
 
 export const AuthContext = createContext();
 
@@ -63,6 +64,7 @@ function App() {
                         <NotFound />
                     </Route>
                 </Switch>
+                <Footer/>
             </Router>
         </AuthContext.Provider>
     );

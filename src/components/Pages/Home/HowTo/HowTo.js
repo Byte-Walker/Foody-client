@@ -4,7 +4,7 @@ import howToImg from '../../../../media/HowTo.svg';
 
 const HowTo = () => {
     return (
-        <div className="how-to-section">
+        <div className="how-to-section" id="how-to-order">
             <img src={howToImg} alt="step by step guide" />
             <div className="how-to-guide">
                 <h1 className="section-title">How It Works</h1>
