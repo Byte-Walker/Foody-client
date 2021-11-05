@@ -1,4 +1,7 @@
 # Foody | The Fastest Delivery of delicious food
+
+ ## Live site link: [Click here](https://foody-delivery.netlify.app/)
+
 Foody is a fictional food delivery app where users can browse all the foods and order it through online with easy to use web interface. They can also manage their orders and all the data will be saved to the database. The app consists of the following features: 
 1. Order food
 2. Make their own account with google sign in method
@@ -15,6 +18,7 @@ Technologies used:
 4. ExpressJs for server.
 5. MongoDB for database
 
-## Live link of the site: https://foody-delivery.netlify.app/
+Server-side repository: [Click here](https://github.com/Byte-Walker/Foody-server)
+
 
 Any suggestion? Send me at mdshahidulridoy@gmail.com.
